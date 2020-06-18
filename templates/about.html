@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <body class="body3">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!--Toggle button the navbar collapses into-->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!--The logo-->
+            <a class="navbar-brand" href="{{ url_for('index') }}">Logo</a>
+          </div>
+          <!--Collapsible navbar list-->
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <!--Search bar-->
+                <div class="search">
+                    <input type="text" name="search" placeholder="Search" class="searchbox">
+                    <a class="searchbtn" href="#search">
+                        <i class="fas fa-search" style="color:white" ></i>
+                    </a>
+                </div>
+              </li>
+              <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+              <li><a href="{{ url_for('blog') }}">BLOG</a></li>
+              <li><a href="{{ url_for('signup') }}">LOGIN</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+        <div class="container-fluid" id="about">
+            <h1>
+                About Us
+            </h1>
+            <h2>
+                We subscribe to emailed offers so you don't have to.
+            </h2>
+            <h5>
+                E-Commerce shops love to send emails to their customers. They tell them what's hot first, and give them their best deals. And we love them for that!
+
+                But we also know what it's like to have dozens of emails each morning. There's a great deal in there somewhere, but you're just not ready to shop right now.
+            </h5>
+        </div>
+    </body>
+{% endblock %}

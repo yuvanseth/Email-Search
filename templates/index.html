@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <!--Toggle button the navbar collapses into-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <!--The logo-->
+                <a class="navbar-brand" href="{{ url_for('index') }}">Logo</a>
+              </div>
+              <!--Collapsible navbar list-->
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <!--Search bar-->
+                    <div class="search">
+                        <input type="text" name="search" placeholder="Search" class="searchbox">
+                        <a class="searchbtn" href="#search">
+                            <i class="fas fa-search" style="color:white" ></i>
+                        </a>
+                    </div>
+                  </li>
+                  <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                  <li><a href="{{ url_for('blog') }}">BLOG</a></li>
+                  <li><a href="{{ url_for('signup') }}">LOGIN</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        
+        <!--Image gallery-->
+        <div class="container-fluid">
+            <div class="row" id="row-images">
+               {% for uid in uids %}
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <a href="Images/{{ uid }}.png">
+                            <div class="image"><img class="img-fluid" src="Images/{{ uid }}.png" ></div>
+                        </a>
+                    </div> 
+                {% endfor %}       
+            </div>
+        </div>
+        <!-- Footer -->
+        
+        
+            <footer class="footer">
+                <!-- Copyright -->
+                <div class="container-fluid">
+                    <div class="row" id="row-footer">
+                        <div class="col-xs-3">
+                            Categories
+                            <ul class="list-unstyled">
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3">
+                            Privacy
+                            <ul class="list-unstyled">
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3">
+                            Contact
+                            <ul class="list-unstyled">
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3" id="col4">
+                            2020
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+            
+            </footer>
+            
+    </body>
+{% endblock %}

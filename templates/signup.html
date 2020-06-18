@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <body class="body2">
+        <div class="container">
+            <div class="formbox">
+                <div class="buttonbox">
+                    <div id="btn"></div>
+                    <button id="logintoggle" type="button" class="toggle" onclick="login()">Login</button>
+                    <button id="registertoggle" type="button" class="toggle" onclick="register()">Register</button>
+                </div> 
+                <form class="inputgroup" id="Login">
+                    <input type="text" class="inputfield" placeholder="Email Id" required>
+                    <input type="password" class="inputfield" placeholder="Password" required><br><br>
+                    <input type="checkbox" class="checkbox" name="checkbox1" id="checkbox1"><label for="checkbox1">Remember Password</label><br><br>
+                    <button type="submit" class="submit">Log in</button>
+                </form>
+                <form class="inputgroup" id="Register">
+                    <input type="text" class="inputfield" placeholder="Username" required>
+                    <input type="text" class="inputfield" placeholder="Email Id" required>
+                    <input type="password" class="inputfield" placeholder="Password" required>
+                    <input type="password" class="inputfield" placeholder="Confirm Password" required><br><br>
+                    <button type="submit" class="submit">Register</button>
+                </form>
+            </div>
+        </div>  
+        <script>
+            var x = document.getElementById("Login")
+            var y = document.getElementById("Register")
+            var z = document.getElementById("btn")
+            var a = document.getElementById("logintoggle")
+            var b = document.getElementById("registertoggle")
+
+            function register()
+            {
+                x.style.left="-400px";
+                y.style.left="50px";
+                z.style.left="110px";
+                a.style.color="white"
+                b.style.color="black"
+            }
+
+            function login()
+            {
+                x.style.left="50px";
+                y.style.left="450px";
+                z.style.left="0";
+                b.style.color="white"
+                a.style.color="black"
+            }
+        </script>
+    </body>
+{% endblock %}
+  
