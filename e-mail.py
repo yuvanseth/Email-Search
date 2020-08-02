@@ -1,6 +1,7 @@
 import imaplib
 import email
 import os
+# for error 'no module names 'lib''
 import sys
 sys.path.insert(0,'/Users/yuvanseth/Documents/VS/Email-Search/eml2pdflib')
 print(sys.path)
@@ -12,6 +13,7 @@ import requests
 import logging
 import http.client
 from conf import *
+import pdb
 
 EMAIL_ADDRESS = os.environ['EMAIL_ADDRESS']
 EMAIL_PSWD = os.environ['EMAIL_PSWD']
@@ -82,13 +84,13 @@ def getMsgIdFromHeaders(headers):
             return headerAndValue[1]
     return None
 
-count = 0;
+count = 0
 MAX_COUNT = 10
 for mail in mails[:1]:
     uids = email_helper.get_emails(mail)
 
-    for uid in uids[:3]:
-        count = count + 1
+    for uid in uids[:10]:
+        count += 1
         uidAsInt = int.from_bytes(uid,"big")
         logging.info("Attempting fetching of message with uid=%d", uidAsInt)
         try:
@@ -147,6 +149,8 @@ for mail in mails[:1]:
             #print(pdf_path)
         except Exception as e: 
             print(e)
+        #pdb.set_trace()    
+
 
     logging.info("Ingested a total of %d messages", count)
     logging.info("Exiting")
