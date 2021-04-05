@@ -1,5 +1,5 @@
-# Email-Search
+# Newsletter Aggregator
 
-This project scans an input e-mail id for newsletters from certain e-commerce websites.
+This project scrapes the top 250 e-commerce websites and subscribes to their newsletters
 
 It then displays all the newsletters as images on the webpage
